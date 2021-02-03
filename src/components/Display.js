@@ -4,11 +4,9 @@ const Display = props => {
   const { result } = props;
 
   return (
-    <h1>
-      Result:
-      {' '}
+    <p>
       {result}
-    </h1>
+    </p>
   );
 };
 
