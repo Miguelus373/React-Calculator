@@ -5,13 +5,13 @@ const Display = props => {
 
   return (
     <p>
-      {result}
+      {result ?? '0'}
     </p>
   );
 };
 
 Display.defaultProps = {
-  result: '0',
+  result: null,
 };
 
 Display.propTypes = {
