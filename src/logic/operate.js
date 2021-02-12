@@ -2,7 +2,7 @@ import Big from 'big.js';
 
 const operate = (numberOne, numberTwo, operation) => {
   if (numberOne === null || numberTwo === null) {
-    return 0;
+    return numberOne ?? 0;
   }
 
   let result = 0;
@@ -11,26 +11,30 @@ const operate = (numberOne, numberTwo, operation) => {
 
   switch (operation) {
     case '+':
-      result = (parseFloat(x) + parseFloat(y)).toString();
+      result = x.plus(y);
       break;
 
     case '-':
-      result = x - y;
+      result = x.minus(y);
       break;
 
     case 'X':
-      result = x * y;
+      result = x.times(y);
       break;
 
     case '÷':
-      result = x / y;
+      if (numberTwo === '0') {
+        result = 'Error';
+      } else {
+        result = x.div(y);
+      }
       break;
 
     default:
       break;
   }
 
-  return (result === Infinity ? 'Error' : result);
+  return result;
 };
 
 export { operate as default };
