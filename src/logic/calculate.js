@@ -2,21 +2,21 @@ import operate from './operate';
 
 const calculate = (data, buttonName) => {
   const { total, next, operation } = data;
-  let result;
+  let result = { total, next, operation };
 
   if (buttonName === 'AC' || total === 'Error') {
     result = { total: null, next: null, operation: null };
   } else if (buttonName === '+/-') {
     if (next === null) {
-      result = { total: total ? (total * -1).toString() : total };
+      result.total = total ? (total * -1).toString() : total;
     } else {
-      result = { next: (next * -1).toString() };
+      result.next = (next * -1).toString();
     }
   } else if (buttonName === '%') {
     if (total === null && next !== null) {
-      result = { next: next ? (next / 100).toString() : next };
+      result.next = next ? (next / 100).toString() : next;
     } else if (next === null && total !== null) {
-      result = { total: total ? (total / 100).toString() : total };
+      result.total = total ? (total / 100).toString() : total;
     }
   } else if (['+', '-', 'X', '÷'].includes(buttonName)) {
     result = {
@@ -31,9 +31,9 @@ const calculate = (data, buttonName) => {
       operation: null,
     };
   } else if (buttonName === '.' && next) {
-    result = { next: next.includes('.') ? next : `${next}.` };
+    result.next = next.includes('.') ? next : `${next}.`;
   } else {
-    result = { next: next ? next + buttonName : buttonName };
+    result.next = next ? next + buttonName : buttonName;
   }
 
   return result;
