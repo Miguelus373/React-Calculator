@@ -19,10 +19,10 @@ const App = () => {
   };
 
   return (
-    <>
+    <div className="calc">
       <Display result={next ?? total} />
       <ButtonPanel clickHandler={handleClick} />
-    </>
+    </div>
   );
 };
 
