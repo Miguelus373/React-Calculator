@@ -4,7 +4,7 @@
 
 h2 {
   position: absolute;
-  left: 3rem;
+  left: 4rem;
   top: 7rem;
   color: darkslategrey;
 }
@@ -14,7 +14,7 @@ h2 {
 }
 
 .nav {
-  padding: 0 3rem;
+  padding: 0 4rem;
   justify-content: space-between;
   align-items: center;
   background-color: orange;
@@ -31,15 +31,22 @@ h2 {
   margin: 0 0.5rem;
 }
 
+.lorem {
+  position: absolute;
+  left: 4rem;
+  top: 12rem;
+  width: 90%;
+  font-size: 1.5rem;
+}
+
+.lorem p {
+  margin-bottom: 3rem;
+}
+
 .calc {
   width: 700px;
   position: absolute;
-  right: 3rem;
-}
-
-.calc h2 {
-  position: relative;
-  left: 3rem;
+  right: 4rem;
 }
 
 .display {
