@@ -43,6 +43,12 @@ h2 {
   margin-bottom: 3rem;
 }
 
+.quote {
+  margin: 12rem auto 0;
+  width: 60%;
+  font-size: 1.7rem;
+}
+
 .calc {
   width: 700px;
   position: absolute;
