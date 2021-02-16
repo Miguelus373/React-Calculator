@@ -19,10 +19,13 @@ const Calculator = () => {
   };
 
   return (
-    <div className="calc">
-      <Display result={next ?? total} />
-      <ButtonPanel clickHandler={handleClick} />
-    </div>
+    <>
+      <h2>Let’s do some math!</h2>
+      <div className="calc">
+        <Display result={next ?? total} />
+        <ButtonPanel clickHandler={handleClick} />
+      </div>
+    </>
   );
 };
 
