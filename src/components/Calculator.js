@@ -22,7 +22,7 @@ const Calculator = () => {
     <>
       <h2>Let’s do some math!</h2>
       <div className="calc">
-        <Display result={next ?? total} />
+        <Display result={next ?? operation ?? total} />
         <ButtonPanel clickHandler={handleClick} />
       </div>
     </>

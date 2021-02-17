@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => (
-  <navbar className="flex nav">
+  <nav className="flex nav">
     <h1>Math Magicians</h1>
     <div>
       <Link to="/">Home</Link>
@@ -11,7 +11,7 @@ const Navbar = () => (
       {' | '}
       <Link to="/quote">Quote</Link>
     </div>
-  </navbar>
+  </nav>
 );
 
 export { Navbar as default };
