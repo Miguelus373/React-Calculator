@@ -13,17 +13,25 @@ const calculate = (data, buttonName) => {
       result.next = (next * -1).toString();
     }
   } else if (buttonName === '%') {
-    if (total === null && next !== null) {
-      result.next = next ? (next / 100).toString() : next;
-    } else if (next === null && total !== null) {
-      result.total = total ? (total / 100).toString() : total;
+    if (next !== null) {
+      result.next = (next / 100).toString();
+    } else if (total !== null) {
+      result.total = (total / 100).toString();
     }
   } else if (['+', '-', 'X', '÷'].includes(buttonName)) {
-    result = {
-      total: total ?? next,
-      next: null,
-      operation: buttonName,
-    };
+    if (Object.values(result).includes(null)) {
+      result = {
+        total: total ?? next,
+        next: null,
+        operation: buttonName,
+      };
+    } else {
+      result = {
+        total: operate(total, next, operation).toString(),
+        next: null,
+        operation: buttonName,
+      };
+    }
   } else if (buttonName === '=') {
     result = {
       total: operate(total, next, operation).toString(),

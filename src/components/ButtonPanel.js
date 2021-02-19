@@ -13,12 +13,16 @@ const ButtonPanel = props => {
   return (
     <>
       {Object.keys(buttons).map(group => (
-        <div key={group}>
+        <div key={group} className="flex panel">
           {buttons[group].map(button => (
             <Button
               key={button}
               name={button}
               handleClick={props.clickHandler}
+              wide={button === '0'}
+              color={
+                ['+', '-', 'X', '÷', '='].includes(button) ? '' : 'custom-color'
+              }
             />
           ))}
         </div>

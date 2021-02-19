@@ -1,10 +1,16 @@
 import PropTypes from 'prop-types';
 
 const Button = props => {
-  const { name, handleClick } = props;
+  const {
+    name, handleClick, color, wide,
+  } = props;
 
   return (
-    <button type="button" onClick={() => handleClick(name)}>
+    <button
+      className={`button ${color} ${wide ? 'wide' : ''}`}
+      type="button"
+      onClick={() => handleClick(name)}
+    >
       {name}
     </button>
   );
@@ -12,11 +18,14 @@ const Button = props => {
 
 Button.defaultProps = {
   name: '=',
+  color: '',
 };
 
 Button.propTypes = {
   name: PropTypes.string,
   handleClick: PropTypes.func.isRequired,
+  color: PropTypes.string,
+  wide: PropTypes.bool.isRequired,
 };
 
 export { Button as default };
